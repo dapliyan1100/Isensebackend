@@ -24,6 +24,20 @@ export const getUser = async (req, res) => {
   }
 };
 
+
+export const getUserContacts = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const user = await prisma.contact.findMany({
+      where: { userId: id },
+    });
+    res.status(200).json(user);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Failed to get the contacts!" });
+  }
+};
+
 // export const updateUser = async (req, res) => {
 //   const id = req.params.id;
 //   const tokenUserId = req.userId;
