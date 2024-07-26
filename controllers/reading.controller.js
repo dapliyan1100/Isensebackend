@@ -8,7 +8,7 @@ export const updateLastReading = async (req, res) => {
               sensorId: id,
             },
             data: {
-              smokeLevel: req.body.gasConcentration, 
+              smokeConsentration: req.body.smokeConsentration, 
             },
           });
           res.status(200).json(lastReading);

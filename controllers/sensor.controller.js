@@ -19,7 +19,7 @@ export const createSensor = async (req, res) => {
   
       const initialLastReading = await prisma.lastReading.create({
         data: {
-          smokeLevel: 0,    
+          smokeConsentration: 0,    
           sensorId: newSensor.id, 
         },
       });
